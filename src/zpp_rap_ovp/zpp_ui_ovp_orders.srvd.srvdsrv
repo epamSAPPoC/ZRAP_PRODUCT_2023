@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service Definition for OVP'
+define service Zpp_ui_ovp_orders {
+  expose zpip_c_ovp_glob_filt_mark_ord as GlobalFilters;
+  expose zpip_c_ovp_cards_market_order as OVPCards;
+}

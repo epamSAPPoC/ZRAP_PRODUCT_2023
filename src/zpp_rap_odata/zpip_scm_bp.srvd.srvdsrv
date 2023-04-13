@@ -1,0 +1,5 @@
+@EndUserText.label: 'ZPIP_SCM_BP'
+@OData.schema.name: 'API_BUSINESS_PARTNER'
+define service ZPIP_SCM_BP {
+ expose ZPIP_A_BUSINESSPARTNER; 
+ } 

@@ -1,0 +1,98 @@
+@Metadata.layer: #CORE
+
+annotate view zpip_c_product_analyze
+    with 
+{
+    @UI.facet: [
+                {
+                  purpose:          #QUICK_VIEW,
+                  type:             #FIELDGROUP_REFERENCE,
+                  targetQualifier: 'ProductData',
+                  label: 'Product'
+                },
+                { 
+                  purpose:         #QUICK_VIEW,
+                  type:            #FIELDGROUP_REFERENCE,
+                  targetQualifier: 'ProductAnalyzeQW',
+                  label: 'Sales Analytics'
+                }
+               ]
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductData', 
+                          position:  10, 
+                          label:     'Product ID',
+                          criticality: 'ProdIDCriticality' }],
+           lineItem: [{
+                        position:  10,
+                        label:     'Product ID'
+                     }]
+         }
+    ProdId;
+   
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductData', 
+                          position:  20, 
+                          label:     'Product Name',
+                          criticality: 'ProdNameCriticality' }],
+           lineItem: [{
+                        position:  20,
+                        label:     'Product Name'
+                     }]
+         }
+    ProductName;
+    
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductAnalyzeQW', 
+                          position:  10, 
+                          label:     'Markets' }],
+           lineItem: [{
+                        position:  30,
+                        label:     'Markets'
+                     }]
+         }
+    Countries;
+    
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductAnalyzeQW', 
+                          position:  20,
+                          label:     'Markets Quantity' }],
+           lineItem: [{
+                        position:  40,
+                        label:     'Markets Quantity'
+                     }]
+         }
+    MarketsQuantity;
+    
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductAnalyzeQW', 
+                          position:  30,
+                          label:     'Orders Quantity' }],
+           lineItem: [{
+                        position:  50,
+                        label:     'Orders Quantity'
+                     }]
+         }
+    OrderQuantity;
+    
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductAnalyzeQW', 
+                          position:  40,
+                          label:     'Net Amount' }],
+           lineItem: [{
+                        position:  60,
+                        label:     'Net Amount'
+                     }]
+         }
+    Netamount;
+    
+    @UI: {
+           fieldGroup: [{ qualifier: 'ProductAnalyzeQW', 
+                          position:  60,
+                          label:     'Gross Amount' }],
+           lineItem: [{
+                        position:  70,
+                        label:     'Gross Amount'
+                     }]
+         }
+    Grossamount;
+}

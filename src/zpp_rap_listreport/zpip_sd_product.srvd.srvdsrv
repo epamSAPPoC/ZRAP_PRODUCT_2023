@@ -1,0 +1,11 @@
+@EndUserText.label: 'Service Definition for Product'
+define service Zpip_sd_product {
+  expose zpip_c_product as Product;
+  expose zpip_c_market as Market;
+  expose zpip_c_order as OrderOfMarket;
+  expose zpip_c_product_analyze as ProductAnalyze;
+  expose I_Country as Country;
+  expose zpip_i_user as User;
+  expose zpip_i_order_ch as OrderChart;
+  expose zpip_i_market_ch as MarketChart;
+}

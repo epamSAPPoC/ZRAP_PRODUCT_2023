@@ -1,0 +1,4 @@
+@EndUserText.label: 'ALP Service Definition'
+define service Zpip_ui_alp_market_ord {
+  expose zpip_c_alp_market_order as ALPMarketOrder;
+}

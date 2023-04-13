@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Product Analyze'
+define service Zpip_sd_product_analyze {
+  expose zpip_c_product_analyze as ProductAnalyze;
+}
