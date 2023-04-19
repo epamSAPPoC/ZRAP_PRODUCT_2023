@@ -1,7 +1,6 @@
 @AbapCatalog.sqlViewName: 'ZPIPCGLOBFMTORD'
 @AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #CHECK
+@AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'Global Filters for Market Order'
 
 define view zpip_c_ovp_glob_filt_mark_ord

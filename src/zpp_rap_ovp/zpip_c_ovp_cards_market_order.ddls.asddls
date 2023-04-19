@@ -1,6 +1,5 @@
 @AbapCatalog.sqlViewName: 'ZPIPCOVPCRDMRORD'
 @AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
 @AccessControl.authorizationCheck: #NOT_REQUIRED
 @EndUserText.label: 'OVP Cards for Market Order'
 
@@ -129,8 +128,6 @@ define view zpip_c_ovp_cards_market_order
                                 qualifier:            'FaceSide',
                                 position:              10,
                                 label:                'Product ID'//,
-//                                semanticObjectAction: 'listreportaction', 
-//                                type:                  #FOR_INTENT_BASED_NAVIGATION 
                              }]
            }
       Orderid,
@@ -152,31 +149,10 @@ define view zpip_c_ovp_cards_market_order
            }
       @UI.identification: [{ //StackCard  Orders List
                              qualifier:            'FlipSide',
-//                             semanticObjectAction: 'listreportaction',
-//                             type:                  #FOR_INTENT_BASED_NAVIGATION,
                              position:              10
                           }]
-      
-      @Consumption: {
-                     semanticObject: 'listreportsemanticobject',
-                     semanticObjectMapping.additionalBinding: [ 
-                                                               {
-                                                                 localElement: 'Pgid', 
-                                                                 element: 'Pgid' 
-                                                               }
-                                                              ] 
-                    }
       ProductName,
       
-      @Consumption: {
-                     semanticObject: 'alpsemantic',
-                     semanticObjectMapping.additionalBinding: [ 
-                                                               {
-                                                                 localElement: 'CountryName', 
-                                                                 element: 'CountryName' 
-                                                               }
-                                                              ] 
-                    }
       @UI: { 
              lineItem:   [{ //ListCard  Orders List
                             qualifier: 'OrdersList',   
@@ -193,24 +169,6 @@ define view zpip_c_ovp_cards_market_order
       CountryName,
       
       //Chart Tab1 Total Quantity of Orders
-      @Consumption: {
-                     semanticObject: 'alpsemantic',
-                     semanticObjectMapping.additionalBinding: [ 
-                                                               {
-                                                                 localElement: 'CountryName', 
-                                                                 element: 'CountryName' 
-                                                               }
-                                                              ] 
-                    }
-//      @Consumption: {
-//                     semanticObject: 'listreportsemanticobject',
-//                     semanticObjectMapping.additionalBinding: [ 
-//                                                               {
-//                                                                 localElement: 'Pgid', 
-//                                                                 element: 'Pgid' 
-//                                                               }
-//                                                              ] 
-//                    }                    
       @UI.dataPoint: {
                        qualifier:               'dpOrdQuanByCountry',
                        criticalityCalculation: { improvementDirection: #MAXIMIZE,
@@ -219,30 +177,9 @@ define view zpip_c_ovp_cards_market_order
                      }
       @Aggregation.default: #SUM
       @EndUserText.label: 'Quantity by Countrys'
-//      @UI.identification: [
-//                           { 
-//                             semanticObjectAction: 'alpreportaction',
-//                             type:                 #FOR_INTENT_BASED_NAVIGATION 
-//                           }
-//                          ]
-//      @UI.identification: [
-//                           { 
-//                             semanticObjectAction: 'listreportaction',
-//                             type:                 #FOR_INTENT_BASED_NAVIGATION 
-//                           }
-//                          ]                         
       CountByCountry,
       
       //Chart Tab2 Total Quantity of Orders
-//      @Consumption: {
-//                     semanticObject: 'listreportsemanticobject',
-//                     semanticObjectMapping.additionalBinding: [ 
-//                                                               {
-//                                                                 localElement: 'Pgid', 
-//                                                                 element: 'Pgid' 
-//                                                               }
-//                                                              ] 
-//                    }
       @UI.dataPoint: {
                        qualifier:               'dpOrdQuanByProdGr',
                        criticalityCalculation: { improvementDirection: #MAXIMIZE,
@@ -251,12 +188,6 @@ define view zpip_c_ovp_cards_market_order
                      }
       @Aggregation.default: #SUM
       @EndUserText.label: 'Quantity by Product Groups'
-//      @UI.identification: [
-//                           { 
-//                             semanticObjectAction: 'listreportaction',
-//                             type:                 #FOR_INTENT_BASED_NAVIGATION 
-//                           }
-//                          ]
       CountByProdGrp,
      
       PhaseName,
@@ -349,10 +280,6 @@ define view zpip_c_ovp_cards_market_order
           }
       @EndUserText.label:   'Average Gross Income Percentage'
       @Aggregation.default: #AVG
-//      @UI.identification: [
-//                           { semanticObjectAction: 'alpreportaction',
-//                             type:                 #FOR_INTENT_BASED_NAVIGATION }
-//                          ]
       GrossIncomPercentage,
       
       Percentage,
