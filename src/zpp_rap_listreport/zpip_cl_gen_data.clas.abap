@@ -16,7 +16,8 @@ CLASS zpip_cl_gen_data DEFINITION
       get_country,
       get_taxes,
       get_user,
-      set_oreders.
+      set_oreders,
+      del_orders.
 ENDCLASS.
 
 
@@ -32,6 +33,7 @@ CLASS ZPIP_CL_GEN_DATA IMPLEMENTATION.
 *    GET_TAXES( ).
 *    GET_USER( ).
 *    SET_OREDERS( ).
+*    del_orders(  ).
   ENDMETHOD.
 
 
@@ -293,6 +295,13 @@ CLASS ZPIP_CL_GEN_DATA IMPLEMENTATION.
 *       WHERE mrkt_uuid   = 'C6EF623455A21EDDB0966C4C343C4C82'.
 
 
+  ENDMETHOD.
+
+  METHOD del_orders.
+    DELETE FROM  zpip_d_mrkt_ordr
+      WHERE prod_uuid   = 'C6EF623455A21EDDB0964E1E072CCC60' AND
+            mrkt_uuid   = '72AD846C0C401EEDB09661456F095113' AND
+            order_uuid  = '76229B85365C1EEDB884015E54328913'.
   ENDMETHOD.
 
 ENDCLASS.
